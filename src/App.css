@@ -1,0 +1,214 @@
+.App {
+  background-color: #000000;
+  width: auto;
+  height: 1550px;
+  padding: 0px;
+}
+
+.grid-container {
+  display: grid;
+  height: 1660px;
+  grid-template-columns: 0.3fr 0.5fr 1.5fr 1.7fr 1fr 1.8fr 1fr 0.2fr;
+  grid-template-rows: 0.2fr 0.4fr 0.2fr 0.5fr 2fr 2fr 0.5fr 0.6fr 0.7fr 0.1fr;
+  grid-gap: 1px 1px;
+  grid-template-areas: ". . . . . . . ." ". Clock Clock . . . . ." ". Name Name . . . . ." ". . . . . . . ." ". . . . . . . ." ". . . . . . . ." ". . . . . . . ." ". . . . . . . ." ". . . . . . . ." ". . . . . . . ." ". . . . . . . .";
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+
+.Clock {
+  display: flex;
+  border-style: solid;
+  border-color: #ffffff;
+  border-width: 0.5px;
+  grid-area: Clock;
+  justify-content: center;
+  align-items: center;
+  font-size: 100px;
+}
+
+.Name {
+  border-style: solid;
+  border-color: #ffffff;
+  border-width: 0.5px;
+  grid-area: Name;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 25px;
+}
+
+.Weather {
+  border-style: solid;
+  border-color: #ffffff;
+  border-width: 0.5px;
+  display: grid;
+  grid-area: 2 / 6 / 3 / 8;
+  grid-template-columns: 1.3fr 0.7fr;
+  grid-template-rows: 1fr;
+  grid-gap: 1px 1px;
+  grid-template-areas: "WeatherInfo WeatherIcon";
+}
+
+.WeatherIcon {
+  grid-area: WeatherIcon;
+  border-style: solid;
+  border-color: #ffffff;
+  border-width: 0.5px;
+}
+
+.WeatherInfo {
+  grid-area: WeatherInfo;
+  border-style: solid;
+  border-color: #ffffff;
+  border-width: 0.5px;
+}
+
+.Route {
+  display: grid;
+  grid-area: 3 / 6 / 5 / 8;
+  grid-template-columns: 1.3fr 0.7fr;
+  grid-template-rows: 1fr;
+  grid-gap: 1px 1px;
+  grid-template-areas: "RouteInfo RouteIcon";
+  border-style: solid;
+  border-color: #ffffff;
+  border-width: 0.5px;
+}
+
+.RouteIcon {
+  grid-area: RouteIcon;
+  border-style: solid;
+  border-color: #ffffff;
+  border-width: 0.5px;
+}
+
+.RouteInfo {
+  grid-area: RouteInfo;
+  border-style: solid;
+  border-color: #ffffff;
+  border-width: 0.5px;
+}
+
+.Todo {
+  border-style: solid;
+  border-color: #ffffff;
+  border-width: 0.5px;
+  grid-area: 4 / 2 / 6 / 4;
+}
+
+.Calendar {
+  border-style: solid;
+  border-color: #ffffff;
+  border-width: 0.5px;
+  display: grid;
+  grid-area: 7 / 2 / 8 / 5;
+  grid-template-columns: 0.5fr 1.5fr;
+  grid-template-rows: 1fr;
+  grid-gap: 1px 1px;
+  grid-template-areas: "CalIcon CalInfo";
+}
+
+.Caldate {
+  border-style: solid;
+  border-color: #ffffff;
+  border-width: 0.5px;
+  grid-area: CalIcon;
+}
+
+.CalInfo {
+  border-style: solid;
+  border-color: #ffffff;
+  border-width: 0.5px;
+  grid-area: CalInfo;
+}
+
+.Sport {
+  border-style: solid;
+  border-color: #ffffff;
+  border-width: 0.5px;
+  display: grid;
+  grid-area: 8 / 2 / 9 / 6;
+  grid-template-columns: 0.4fr 1.6fr;
+  grid-template-rows: 1.5fr 0.5fr;
+  grid-gap: 1px 1px;
+  grid-template-areas: "Sporticon Table" "Sporticon Fixture";
+}
+
+.Table {
+  border-style: solid;
+  border-color: #ffffff;
+  border-width: 0.5px;
+  grid-area: Table;
+}
+
+.Fixture {
+  border-style: solid;
+  border-color: #ffffff;
+  border-width: 0.5px;
+  grid-area: Fixture;
+}
+
+.Sporticon {
+  border-style: solid;
+  border-color: #ffffff;
+  border-width: 0.5px;
+  grid-area: Sporticon;
+}
+
+.News {
+  border-style: solid;
+  border-color: #ffffff;
+  border-width: 0.5px;
+  display: grid;
+  grid-area: 9 / 2 / 10 / 8;
+  grid-template-columns: 0.3fr 1.7fr;
+  grid-template-rows: 1fr;
+  grid-gap: 1px 1px;
+  grid-template-areas: "Newsicon newsinfo";
+}
+
+.Newsicon {
+  border-style: solid;
+  border-color: #ffffff;
+  border-width: 0.5px;
+  grid-area: Newsicon;
+}
+
+.newsinfo {
+  border-style: solid;
+  border-color: #ffffff;
+  border-width: 0.5px;
+  grid-area: newsinfo;
+}
+
+.Twitter {
+  border-style: solid;
+  border-color: #ffffff;
+  border-width: 0.5px;
+  display: grid;
+  grid-area: 8 / 6 / 9 / 8;
+  grid-template-columns: 0.5fr 1.5fr;
+  grid-template-rows: 1fr;
+  grid-gap: 1px 1px;
+  grid-template-areas: "TwitIcon Twitinfo";
+}
+
+.TwitIcon {
+  border-style: solid;
+  border-color: #ffffff;
+  border-width: 0.5px;
+  grid-area: TwitIcon;
+}
+
+.Twitinfo {
+  border-style: solid;
+  border-color: #ffffff;
+  border-width: 0.5px;
+  grid-area: Twitinfo;
+}
+
+.IconImage {
+  width: 100px;
+  height: auto;
+}
