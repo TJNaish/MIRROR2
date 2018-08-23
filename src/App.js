@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import {
-  Clock,
+  Clockpage,
   Name,
   Weathericon,
   Weatherinfo,
@@ -21,15 +21,16 @@ import {
 import "./App.css";
 
 class App extends Component {
+  state = { username: "Tim" };
   render() {
     return (
       <div className="App">
         <div className="grid-container">
           <div className="Clock">
-            <Clock />
+            <Clockpage />
           </div>
           <div className="Name">
-            <Name />
+            <Name username={this.state.username} />
           </div>
           <div className="Todo">
             <Todo />

@@ -1,4 +1,4 @@
-export { default as Clock } from "./Clock";
+export { default as Clockpage } from "./Clockpage";
 export { default as Name } from "./Name";
 export { default as Weathericon } from "./Weathericon";
 export { default as Weatherinfo } from "./Weatherinfo";

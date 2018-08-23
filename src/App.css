@@ -42,6 +42,7 @@
   border-style: solid;
   border-color: #ffffff;
   border-width: 0.5px;
+  text-align: right;
   display: grid;
   grid-area: 2 / 6 / 3 / 8;
   grid-template-columns: 1.3fr 0.7fr;
@@ -71,6 +72,7 @@
   grid-template-rows: 1fr;
   grid-gap: 1px 1px;
   grid-template-areas: "RouteInfo RouteIcon";
+  text-align: right;
   border-style: solid;
   border-color: #ffffff;
   border-width: 0.5px;
