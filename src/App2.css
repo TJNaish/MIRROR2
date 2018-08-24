@@ -1,0 +1,126 @@
+.App-logo {
+    animation: App-logo-spin infinite 20s linear;
+    height: 80px;
+  }
+  
+  .App-header {
+    background-color: #222;
+    height: 150px;
+    padding: 20px;
+    color: white;
+  }
+  
+  .App-title {
+    font-size: 1.5em;
+  }
+  
+  .App-intro {
+    font-size: large;
+  }
+  
+  @keyframes App-logo-spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .container {
+    display: grid;
+    grid-template-rows: 1fr;
+  
+    grid-template-areas: 'header header header';
+  
+    height: max-content;
+    background-color: #222;
+  }
+  
+  header {
+    grid-area: header;
+    background-color: black;
+    text-align: center;
+    text-decoration-color: #e1ecf9;
+    width: 100%;
+    position: absolute;
+    font-family: 'Wendy One', sans-serif;
+  
+    color: #bfd5ed;
+  }
+  main {
+    grid-area: main;
+    background-color: #e1ecf9;
+    font-family: 'Gaegu', cursive;
+    padding-right: 15px;
+    overflow: scroll;
+    overflow-x: hidden;
+    margin-top: 100px;
+  }
+  
+  aside {
+    grid-area: aside;
+    background-color: #609ce1;
+    font-family: 'Gaegu', cursive;
+    margin-top: 100px;
+  }
+  .gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 2%;
+  }
+  .gallery-Item {
+    margin: 10px;
+    -webkit-transition: 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+    -moz-transition: 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+    transition: 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
+  }
+  
+  .gallery-Item .articleThumbnail {
+    height: 120px;
+    width: 290px;
+    overflow: hidden;
+    border: 2px solid white;
+    border-radius: 4px;
+    padding: 2%;
+    background-color: whitesmoke;
+    box-shadow: 0 0 80px black;
+  }
+  
+  p {
+    color: whitesmoke;
+  }
+  
+  h3 {
+    color: whitesmoke;
+  }
+  
+  .personal {
+    padding-top: 170px;
+  }
+  
+  h1 {
+    color: whitesmoke;
+  }
+  * {
+    box-sizing: border-box;
+  }
+  
+  /* Create two equal columns that floats next to each other */
+  .column {
+    float: left;
+    padding-top: 75px;
+    padding-left: 20px;
+    height: max-content; /* Should be removed. Only for demonstration */
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    padding-top: 150px;
+    content: '';
+    display: table;
+    clear: both;
+    float: right;
+  }
+  
