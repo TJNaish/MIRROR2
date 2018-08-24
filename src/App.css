@@ -11,8 +11,8 @@
   grid-template-columns: 0.3fr 0.5fr 1.5fr 1.7fr 1fr 1.8fr 1fr 0.2fr;
   grid-template-rows: 0.2fr 0.4fr 0.2fr 0.5fr 2fr 2fr 0.5fr 0.6fr 0.7fr 0.1fr;
   grid-gap: 1px 1px;
-  grid-template-areas: ". . . . . . . ." ". Clock Clock . . . . ." ". Name Name . . . . ." ". . . . . . . ." ". . . . . . . ." ". . . . . . . ." ". . . . . . . ." ". . . . . . . ." ". . . . . . . ." ". . . . . . . ." ". . . . . . . .";
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  grid-template-areas: '. . . . . . . .' '. Clock Clock . . . . .' '. Name Name . . . . .' '. . . . . . . .' '. . . . . . . .' '. . . . . . . .' '. . . . . . . .' '. . . . . . . .' '. . . . . . . .' '. . . . . . . .' '. . . . . . . .';
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 .Clock {
@@ -48,7 +48,7 @@
   grid-template-columns: 1.3fr 0.7fr;
   grid-template-rows: 1fr;
   grid-gap: 1px 1px;
-  grid-template-areas: "WeatherInfo WeatherIcon";
+  grid-template-areas: 'WeatherInfo WeatherIcon';
 }
 
 .WeatherIcon {
@@ -71,7 +71,7 @@
   grid-template-columns: 1.3fr 0.7fr;
   grid-template-rows: 1fr;
   grid-gap: 1px 1px;
-  grid-template-areas: "RouteInfo RouteIcon";
+  grid-template-areas: 'RouteInfo RouteIcon';
   text-align: right;
   border-style: solid;
   border-color: #ffffff;
@@ -108,7 +108,7 @@
   grid-template-columns: 0.5fr 1.5fr;
   grid-template-rows: 1fr;
   grid-gap: 1px 1px;
-  grid-template-areas: "CalIcon CalInfo";
+  grid-template-areas: 'CalIcon CalInfo';
 }
 
 .Caldate {
@@ -134,7 +134,7 @@
   grid-template-columns: 0.4fr 1.6fr;
   grid-template-rows: 1.5fr 0.5fr;
   grid-gap: 1px 1px;
-  grid-template-areas: "Sporticon Table" "Sporticon Fixture";
+  grid-template-areas: 'Sporticon Table' 'Sporticon Fixture';
 }
 
 .Table {
@@ -167,7 +167,7 @@
   grid-template-columns: 0.3fr 1.7fr;
   grid-template-rows: 1fr;
   grid-gap: 1px 1px;
-  grid-template-areas: "Newsicon newsinfo";
+  grid-template-areas: 'Newsicon newsinfo';
 }
 
 .Newsicon {
@@ -193,7 +193,7 @@
   grid-template-columns: 0.5fr 1.5fr;
   grid-template-rows: 1fr;
   grid-gap: 1px 1px;
-  grid-template-areas: "TwitIcon Twitinfo";
+  grid-template-areas: 'TwitIcon Twitinfo';
 }
 
 .TwitIcon {
@@ -213,4 +213,19 @@
 .IconImage {
   width: 100px;
   height: auto;
+}
+
+.hidden {
+  opacity: 0;
+}
+
+.startClock {
+  display: flex;
+  border-style: solid;
+  border-color: #ffffff;
+  border-width: 0.5px;
+  grid-area: Clock;
+  justify-content: center;
+  align-items: center;
+  font-size: 100px;
 }

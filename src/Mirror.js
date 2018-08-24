@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 import {
   Clockpage,
   Name,
@@ -16,12 +16,12 @@ import {
   Newsicon,
   Twitterinfo,
   Twittericon
-} from "./components";
+} from './components';
 
-import "./App.css";
+import './App.css';
 
 class App extends Component {
-  state = { username: "Tim" };
+  state = { username: 'Tim' };
   render() {
     return (
       <div className="App">
@@ -30,7 +30,7 @@ class App extends Component {
             <Clockpage />
           </div>
           <div className="Name">
-            <Name username={this.state.username} />
+            <Name username={this.props.name} />
           </div>
           <div className="Todo">
             <Todo />
@@ -88,7 +88,7 @@ class App extends Component {
           </div>
         </div>
       </div>
-      );
+    );
   }
 }
 
