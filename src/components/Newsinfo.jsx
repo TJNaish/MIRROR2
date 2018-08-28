@@ -1,19 +1,32 @@
-import React from "react";
+import React, { Component } from "react";
+import axios from "axios";
 
-const Newsinfo = () => {
-  return (
-    <span>
-      Hillsborough charges against Sir Norman Bettison dropped
-      <br />
-      Adrian Chiles 'horrified' at drinking 100 alcohol units a week
-      <br />
-      Businessman Richard Cousins 'leaves £41m' to Oxfam
-      <br />
-      Microsoft claims win over 'Russian political hackers'
-      <br />
-      Spain's 'wolf pack' sex attackers confronted at Seville pool
-    </span>
-  );
-};
+class Newsinfo extends Component {
+  state = { articles: [] };
+  render() {
+    return (
+      <div>
+        {this.state.articles.map(article => {
+          return (
+            <span>
+              {article.title}
+              <br />
+            </span>
+          );
+        })}
+      </div>
+    );
+  }
+  componentDidMount() {
+    axios
+      .get(
+        "https://newsapi.org/v2/top-headlines?sources=bbc-news&pageSize=5&apiKey=ce019594880f43fb91e02ce8b26ee9e2"
+      )
+      .then(({ data }) => {
+        console.log(data);
+        this.setState({ articles: data.articles });
+      });
+  }
+}
 
 export default Newsinfo;

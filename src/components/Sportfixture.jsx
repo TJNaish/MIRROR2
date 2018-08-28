@@ -1,7 +1,7 @@
 import React from "react";
 
 const Sportfixture = () => {
-  return <span>St Helens v Wigan Warriors - Friday 31st August - 19:45</span>;
+  return <span>St Helens v Wigan Warriors - Fri 31st Aug - 19:45</span>;
 };
 
 export default Sportfixture;
