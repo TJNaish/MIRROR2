@@ -173,3 +173,18 @@
   width: 100px;
   height: auto;
 }
+
+.hidden {
+  opacity: 0;
+}
+
+.startClock {
+  display: flex;
+  border-style: solid;
+  border-color: #ffffff;
+  border-width: 0.5px;
+  grid-area: Clock;
+  justify-content: center;
+  align-items: center;
+  font-size: 100px;
+}
