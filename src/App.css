@@ -20,16 +20,18 @@
   grid-area: Clock;
   justify-content: center;
   align-items: center;
-  font-size: 110px;
+  font-size: 120px;
+  padding-left: 20px;
 }
 
 .Name {
   grid-area: Name;
   display: flex;
   justify-content: center;
-  align-items: center;
   text-align: center;
+  align-items: flex-start;
   font-size: 25px;
+  padding-left: 20px;
 }
 
 .Weather {

@@ -6,9 +6,6 @@ import {
   Weatherinfo,
   Routeicon,
   Routeinfo,
-  Todo,
-  Caldate,
-  Calinfo,
   Sporttable,
   Sportfixture,
   Sporticon,
@@ -44,11 +41,6 @@ class App extends Component {
             </div>
           </div>
           {this.state.username && (
-            <div className="Todo">
-              <Todo />
-            </div>
-          )}
-          {this.state.username && (
             <div className="Route">
               <div className="RouteIcon">
                 <Routeicon />
@@ -58,29 +50,20 @@ class App extends Component {
               </div>
             </div>
           )}
-          {this.state.username && (
-            <div className="Calendar">
-              <div className="area-overlap Caldate">
-                <Caldate />
+          {this.state.sportsteam &&
+            this.state.username && (
+              <div className="Sport">
+                <div className="Table">
+                  <Sporttable setTeam={this.state.sportsteam} />
+                </div>
+                <div className="Fixture">
+                  <Sportfixture setTeam={this.state.sportsteam} />
+                </div>
+                <div className="area-overlap Sporticon">
+                  <Sporticon />
+                </div>
               </div>
-              <div className="CalInfo">
-                <Calinfo />
-              </div>
-            </div>
-          )}
-          {this.state.sportsteam && (
-            <div className="Sport">
-              <div className="Table">
-                <Sporttable setTeam={this.state.sportsteam} />
-              </div>
-              <div className="Fixture">
-                <Sportfixture setTeam={this.state.sportsteam} />
-              </div>
-              <div className="area-overlap Sporticon">
-                <Sporticon />
-              </div>
-            </div>
-          )}
+            )}
           {this.state.username && (
             <div className="News">
               <div className="area-overlap Newsicon">
