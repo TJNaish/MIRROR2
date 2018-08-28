@@ -2,7 +2,11 @@ import React from "react";
 
 const Sporticon = () => {
   return (
-    <img src="/images/rugbyball.png" alt="Sport Icon" className="IconImage" />
+    <img
+      src="/images/football.png"
+      alt="Sport Icon"
+      className="BottomIconImage"
+    />
   );
 };
 

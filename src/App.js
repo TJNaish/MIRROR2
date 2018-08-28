@@ -20,7 +20,11 @@ import {
 import "./App.css";
 import "./App.css";
 class App extends Component {
-  state = { username: "Tim" };
+  state = {
+    username: "Tim",
+    sportsteam: "Wigan Athletic",
+    weathercity: "Manchester"
+  };
   render() {
     return (
       <div className="App">
@@ -31,60 +35,72 @@ class App extends Component {
           <div className="Name">
             <Name username={this.state.username} />
           </div>
-          <div className="Todo">
-            <Todo />
-          </div>
           <div className="Weather">
             <div className="WeatherIcon">
-              <Weathericon />
+              <Weathericon setCity={this.state.weathercity} />
             </div>
             <div className="area-overlap WeatherInfo">
-              <Weatherinfo />
+              <Weatherinfo setCity={this.state.weathercity} />
             </div>
           </div>
-          <div className="Route">
-            <div className="RouteIcon">
-              <Routeicon />
+          {this.state.username && (
+            <div className="Todo">
+              <Todo />
             </div>
-            <div className="area-overlap RouteInfo">
-              <Routeinfo />
+          )}
+          {this.state.username && (
+            <div className="Route">
+              <div className="RouteIcon">
+                <Routeicon />
+              </div>
+              <div className="area-overlap RouteInfo">
+                <Routeinfo />
+              </div>
             </div>
-          </div>
-          <div className="Calendar">
-            <div className="area-overlap Caldate">
-              <Caldate />
+          )}
+          {this.state.username && (
+            <div className="Calendar">
+              <div className="area-overlap Caldate">
+                <Caldate />
+              </div>
+              <div className="CalInfo">
+                <Calinfo />
+              </div>
             </div>
-            <div className="CalInfo">
-              <Calinfo />
+          )}
+          {this.state.sportsteam && (
+            <div className="Sport">
+              <div className="Table">
+                <Sporttable setTeam={this.state.sportsteam} />
+              </div>
+              <div className="Fixture">
+                <Sportfixture setTeam={this.state.sportsteam} />
+              </div>
+              <div className="area-overlap Sporticon">
+                <Sporticon />
+              </div>
             </div>
-          </div>
-          <div className="Sport">
-            <div className="Table">
-              <Sporttable />
+          )}
+          {this.state.username && (
+            <div className="News">
+              <div className="area-overlap Newsicon">
+                <Newsicon />
+              </div>
+              <div className="newsinfo">
+                <Newsinfo />
+              </div>
             </div>
-            <div className="Fixture">
-              <Sportfixture />
+          )}
+          {this.state.username && (
+            <div className="Twitter">
+              <div className="area-overlap TwitIcon">
+                <Twittericon />
+              </div>
+              <div className="Twitinfo">
+                <Twitterinfo />
+              </div>
             </div>
-            <div className="area-overlap Sporticon">
-              <Sporticon />
-            </div>
-          </div>
-          <div className="News">
-            <div className="area-overlap Newsicon">
-              <Newsicon />
-            </div>
-            <div className="newsinfo">
-              <Newsinfo />
-            </div>
-          </div>
-          <div className="Twitter">
-            <div className="area-overlap TwitIcon">
-              <Twittericon />
-            </div>
-            <div className="Twitinfo">
-              <Twitterinfo />
-            </div>
-          </div>
+          )}
         </div>
       </div>
     );

@@ -1,46 +1,52 @@
-import React from "react";
+import React, { Component } from "react";
+import { apikey } from "./config/fixturesApiKey";
 
-const Sporttable = () => {
-  return (
-    <table>
-      <thead>
-        <tr>
-          <th>Pos</th>
-          <th>Name</th>
-          <th>W</th>
-          <th>D</th>
-          <th>L</th>
-          <th>Points</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>1</td>
-          <td>St Helens</td>
-          <td>21</td>
-          <td>0</td>
-          <td>2</td>
-          <td>42</td>
-        </tr>
-        <tr>
-          <td>2</td>
-          <td>Wigan Warriors</td>
-          <td>16</td>
-          <td>0</td>
-          <td>7</td>
-          <td>32</td>
-        </tr>
-        <tr>
-          <td>3</td>
-          <td>Castleford Tigers</td>
-          <td>15</td>
-          <td>1</td>
-          <td>7</td>
-          <td>31</td>
-        </tr>
-      </tbody>
-    </table>
-  );
-};
+class Fixtures extends Component {
+  state = {
+    data: []
+  };
+  render() {
+    return (
+      <div>
+        {this.state.data.map(team => {
+          if (team.team_name === this.props.setTeam)
+            return (
+              <div key={team.team_name}>
+                <b>{this.props.setTeam}</b>
+                <table>
+                  <tbody>
+                    <tr>
+                      <td>Position </td>
+                      <td>Played </td>
+                      <td>Won </td>
+                      <td>Lost </td>
+                      <td>Points</td>
+                    </tr>
+                  </tbody>
+                  <tbody>
+                    <tr>
+                      <td>{team.overall_league_position}</td>
+                      <td>{team.overall_league_payed}</td>
+                      <td>{team.overall_league_W}</td>
+                      <td>{team.overall_league_L}</td>
+                      <td>{team.overall_league_PTS}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            );
+        })}
+      </div>
+    );
+  }
 
-export default Sporttable;
+  componentDidMount = async () => {
+    fetch(
+      `https://apifootball.com/api/?action=get_standings&league_id=63&APIkey=${apikey}`
+    )
+      .then(response => response.json())
+      .then(data => this.setState({ data: data }));
+  };
+}
+
+export default Fixtures;
