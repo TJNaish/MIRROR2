@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import {
   Clockpage,
   Name,
@@ -6,9 +6,6 @@ import {
   Weatherinfo,
   Routeicon,
   Routeinfo,
-  Todo,
-  Caldate,
-  Calinfo,
   Sporttable,
   Sportfixture,
   Sporticon,
@@ -16,12 +13,15 @@ import {
   Newsicon,
   Twitterinfo,
   Twittericon
-} from './components';
-
-import './App.css';
-
+} from "./components";
+import "./App.css";
+import "./App.css";
 class App extends Component {
-  state = { username: 'Tim' };
+  state = {
+    username: "Tim",
+    sportsteam: "Wigan Athletic",
+    weathercity: "Manchester"
+  };
   render() {
     return (
       <div className="App">
@@ -30,62 +30,60 @@ class App extends Component {
             <Clockpage />
           </div>
           <div className="Name">
-            <Name username={this.props.name} />
-          </div>
-          <div className="Todo">
-            <Todo />
+            <Name username={this.state.username} />
           </div>
           <div className="Weather">
             <div className="WeatherIcon">
-              <Weathericon />
+              <Weathericon setCity={this.state.weathercity} />
             </div>
             <div className="area-overlap WeatherInfo">
-              <Weatherinfo />
+              <Weatherinfo setCity={this.state.weathercity} />
             </div>
           </div>
-          <div className="Route">
-            <div className="RouteIcon">
-              <Routeicon />
+          {this.state.username && (
+            <div className="Route">
+              <div className="RouteIcon">
+                <Routeicon />
+              </div>
+              <div className="area-overlap RouteInfo">
+                <Routeinfo />
+              </div>
             </div>
-            <div className="area-overlap RouteInfo">
-              <Routeinfo />
+          )}
+          {this.state.sportsteam &&
+            this.state.username && (
+              <div className="Sport">
+                <div className="Table">
+                  <Sporttable setTeam={this.state.sportsteam} />
+                </div>
+                <div className="Fixture">
+                  <Sportfixture setTeam={this.state.sportsteam} />
+                </div>
+                <div className="area-overlap Sporticon">
+                  <Sporticon />
+                </div>
+              </div>
+            )}
+          {this.state.username && (
+            <div className="News">
+              <div className="area-overlap Newsicon">
+                <Newsicon />
+              </div>
+              <div className="newsinfo">
+                <Newsinfo />
+              </div>
             </div>
-          </div>
-          <div className="Calendar">
-            <div className="area-overlap Caldate">
-              <Caldate />
+          )}
+          {this.state.username && (
+            <div className="Twitter">
+              <div className="area-overlap TwitIcon">
+                <Twittericon />
+              </div>
+              <div className="Twitinfo">
+                <Twitterinfo />
+              </div>
             </div>
-            <div className="CalInfo">
-              <Calinfo />
-            </div>
-          </div>
-          <div className="Sport">
-            <div className="Table">
-              <Sporttable />
-            </div>
-            <div className="Fixture">
-              <Sportfixture />
-            </div>
-            <div className="area-overlap Sporticon">
-              <Sporticon />
-            </div>
-          </div>
-          <div className="News">
-            <div className="area-overlap Newsicon">
-              <Newsicon />
-            </div>
-            <div className="newsinfo">
-              <Newsinfo />
-            </div>
-          </div>
-          <div className="Twitter">
-            <div className="area-overlap TwitIcon">
-              <Twittericon />
-            </div>
-            <div className="Twitinfo">
-              <Twitterinfo />
-            </div>
-          </div>
+          )}
         </div>
       </div>
     );
