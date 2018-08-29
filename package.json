@@ -4,13 +4,16 @@
   "private": true,
   "dependencies": {
     "axios": "^0.18.0",
+    "node-twitter-api": "^1.8.0",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
     "react-google-login-component": "^0.9.3",
     "react-live-clock": "^2.0.3",
     "react-router-dom": "^4.3.1",
     "react-scripts": "1.1.4",
-    "react-webcam": "^1.0.1"
+    "react-webcam": "^1.0.1",
+    "twit": "^2.2.11",
+    "twitter": "^1.7.1"
   },
   "scripts": {
     "start": "react-scripts start",
