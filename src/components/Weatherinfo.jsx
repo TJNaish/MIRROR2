@@ -5,42 +5,50 @@ import propTypes from "prop-types";
 
 class Weather extends Component {
   state = {
-    data: {}
+    data: { data: {} },
+    name: {},
+    work: {}
+  };
+  componentDidMount = async () => {
+    Promise.all([
+      JSON.parse(localStorage.getItem(this.props.name)),
+      JSON.parse(localStorage.getItem("home"))
+    ]).then(([name, work]) => {
+      console.log(name + "<>" + work);
+      this.setState({ name, work });
+    });
+  };
+
+  componentDidUpdate = prevState => {
+    if (prevState.work !== this.state.work) {
+      axios
+        .get(
+          `https://api.openweathermap.org/data/2.5/weather?q=${
+            this.state.name.workCity
+          },uk&appid=${apikey}`
+        )
+        .then(data => {
+          this.setState({ data });
+        });
+    }
   };
 
   render() {
-    const weather = this.state.data;
-    return !this.state.data.main ? (
+    const weather = this.state.data.data;
+    return !this.state.data.data.main ? (
       <p>Loading... </p>
     ) : (
       <div>
         <p>
           {weather.name} <br />
-          {this.state.data.weather[0].description[0].toUpperCase() +
-            this.state.data.weather[0].description.slice(1)}{" "}
+          {this.state.data.data.weather[0].description[0].toUpperCase() +
+            this.state.data.data.weather[0].description.slice(1)}{" "}
           <br />
-          {(this.state.data.main.temp - 273.15).toFixed(0)} °C
+          {(this.state.data.data.main.temp - 273.15).toFixed(0)} °C
         </p>
       </div>
     );
   }
-
-  componentDidMount = async () => {
-    let data = await this.getWeatherData(this.props.setCity);
-    this.setState({
-      data: data
-    });
-  };
-
-  componentDidUpdate = prevProps => {
-    if (prevProps.setCity !== this.props.setCity) {
-      this.getWeatherData(this.props.setCity).then(weatherData => {
-        this.setState({
-          data: weatherData
-        });
-      });
-    }
-  };
 
   getWeatherData = async setCity => {
     const city = setCity;

@@ -18,9 +18,8 @@ import "./App.css";
 import "./App.css";
 class App extends Component {
   state = {
-    username: "Tim",
-    sportsteam: "Wigan Athletic",
-    weathercity: "Manchester"
+    sportsteam: "",
+    weathercity: ""
   };
   render() {
     return (
@@ -30,26 +29,26 @@ class App extends Component {
             <Clockpage />
           </div>
           <div className="Name">
-            <Name username={this.state.username} />
+            <Name username={this.props.name} />
           </div>
           <div className="Weather">
             <div className="WeatherIcon">
-              <Weathericon setCity={this.state.weathercity} />
+              <Weathericon name={this.props.name} />
             </div>
             <div className="area-overlap WeatherInfo">
-              <Weatherinfo setCity={this.state.weathercity} />
+              <Weatherinfo name={this.props.name} />
             </div>
           </div>
-          {this.state.username && (
-            <div className="Route">
-              <div className="RouteIcon">
-                <Routeicon />
-              </div>
-              <div className="area-overlap RouteInfo">
-                <Routeinfo />
-              </div>
+
+          <div className="Route">
+            <div className="RouteIcon">
+              <Routeicon />
             </div>
-          )}
+            <div className="area-overlap RouteInfo">
+              <Routeinfo name={this.props.name} />
+            </div>
+          </div>
+
           {this.state.sportsteam &&
             this.state.username && (
               <div className="Sport">
@@ -64,26 +63,22 @@ class App extends Component {
                 </div>
               </div>
             )}
-          {this.state.username && (
-            <div className="News">
-              <div className="area-overlap Newsicon">
-                <Newsicon />
-              </div>
-              <div className="newsinfo">
-                <Newsinfo />
-              </div>
+          <div className="News">
+            <div className="area-overlap Newsicon">
+              <Newsicon />
             </div>
-          )}
-          {this.state.username && (
-            <div className="Twitter">
-              <div className="area-overlap TwitIcon">
-                <Twittericon />
-              </div>
-              <div className="Twitinfo">
-                <Twitterinfo />
-              </div>
+            <div className="newsinfo">
+              <Newsinfo />
             </div>
-          )}
+          </div>
+          <div className="Twitter">
+            <div className="area-overlap TwitIcon">
+              <Twittericon />
+            </div>
+            <div className="Twitinfo">
+              <Twitterinfo />
+            </div>
+          </div>
         </div>
       </div>
     );

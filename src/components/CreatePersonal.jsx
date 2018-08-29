@@ -1,20 +1,20 @@
-import React, { Component } from 'react';
-import WebcamCapture from './Webcam';
-import Login from './Google';
+import React, { Component } from "react";
+import WebcamCapture from "./Webcam";
+import Login from "./Google";
 
-import '../App2.css';
+import "../App2.css";
 
 export default class CreatePersonal extends Component {
   state = {
-    firstname: '',
-    lastname: '',
-    screenname: '',
-    workStreetNo: '',
-    workStreet: '',
-    workCity: '',
-    workPostcode: '',
-    calendar: '',
-    newsInput: '',
+    firstname: "",
+    lastname: "",
+    screenname: "",
+    workStreetNo: "",
+    workStreet: "",
+    workCity: "",
+    workPostcode: "",
+    calendar: "",
+    newsInput: "",
     newsPref: [],
     accs: [],
     home: {}
@@ -71,7 +71,7 @@ export default class CreatePersonal extends Component {
             value={this.state.workStreet}
           />
 
-          <p>City: : </p>
+          <p>City: </p>
           <input
             type="text"
             onChange={this.handleWorkCityChange}
@@ -150,16 +150,16 @@ export default class CreatePersonal extends Component {
   };
   handleSubmitNews = event => {
     if (event.keyCode === 13) {
-      console.log('hitENter<<<<<<<<<<<<<<<<<<<<,,,');
+      console.log("hitENter<<<<<<<<<<<<<<<<<<<<,,,");
       this.setState({ newsPref: [...this.state.newsPref, event.target.value] });
-      this.setState({ newsInput: '' });
+      this.setState({ newsInput: "" });
     }
   };
   handleCalendar = event => {
     this.setState({ calendar: event.target.value });
   };
   handleButtonSubmit = event => {
-    console.log('hit function');
+    console.log("hit function");
 
     localStorage.setItem(this.state.firstname, JSON.stringify(this.state));
     this.setState({
@@ -169,15 +169,15 @@ export default class CreatePersonal extends Component {
       ]
     });
     this.setState({
-      firstname: '',
-      lastname: '',
-      screenname: '',
-      workStreetNo: '',
-      workStreet: '',
-      workCity: '',
-      workPostcode: '',
-      calendar: '',
-      newsInput: '',
+      firstname: "",
+      lastname: "",
+      screenname: "",
+      workStreetNo: "",
+      workStreet: "",
+      workCity: "",
+      workPostcode: "",
+      calendar: "",
+      newsInput: "",
       newsPref: []
     });
   };

@@ -5,18 +5,20 @@ import propTypes from "prop-types";
 
 class Weather extends Component {
   state = {
-    data: {}
+    data: { data: {} },
+    name: {},
+    work: {}
   };
 
   render() {
     let daynight = "";
     let weathertype = "";
-    if (this.state.data.sys) {
+    if (this.state.data.data.sys) {
       let time = (Date.now() - (Date.now() % 1000)) / 1000;
-      let code = this.state.data.weather[0].id;
+      let code = this.state.data.data.weather[0].id;
       if (
-        time > this.state.data.sys.sunrise &&
-        time < this.state.data.sys.sunset
+        time > this.state.data.data.sys.sunrise &&
+        time < this.state.data.data.sys.sunset
       ) {
         daynight = "day";
       } else {
@@ -41,19 +43,26 @@ class Weather extends Component {
   }
 
   componentDidMount = async () => {
-    let data = await this.getWeatherData(this.props.setCity);
-    this.setState({
-      data: data
+    Promise.all([
+      JSON.parse(localStorage.getItem(this.props.name)),
+      JSON.parse(localStorage.getItem("home"))
+    ]).then(([name, work]) => {
+      console.log(name + "<>" + work);
+      this.setState({ name, work });
     });
   };
 
-  componentDidUpdate = prevProps => {
-    if (prevProps.setCity !== this.props.setCity) {
-      this.getWeatherData(this.props.setCity).then(weatherData => {
-        this.setState({
-          data: weatherData
+  componentDidUpdate = prevState => {
+    if (prevState.work !== this.state.work) {
+      axios
+        .get(
+          `https://api.openweathermap.org/data/2.5/weather?q=${
+            this.state.name.workCity
+          },uk&appid=${apikey}`
+        )
+        .then(data => {
+          this.setState({ data });
         });
-      });
     }
   };
 
