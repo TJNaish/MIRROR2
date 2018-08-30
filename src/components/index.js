@@ -12,5 +12,5 @@ export { default as Sportfixture } from "./Sportfixture";
 export { default as Sporticon } from "./Sporticon";
 export { default as Newsinfo } from "./Newsinfo";
 export { default as Newsicon } from "./Newsicon";
-export { default as Twitterinfo } from "./Twitterinfo";
+export { default as Onthisdayinfo } from "./Onthisdayinfo";
 export { default as Twittericon } from "./Twittericon";

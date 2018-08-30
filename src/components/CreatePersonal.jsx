@@ -13,9 +13,7 @@ export default class CreatePersonal extends Component {
     workStreet: "",
     workCity: "",
     workPostcode: "",
-    calendar: "",
-    newsInput: "",
-    newsPref: [],
+    sportsTeam: "",
     accs: [],
     home: {}
   };
@@ -85,27 +83,14 @@ export default class CreatePersonal extends Component {
             value={this.state.workPostcode}
           />
 
-          <p>Add subjects to your news feed: </p>
-          {this.state.newsPref.map(function(n) {
-            return <p>{n}</p>;
-          })}
+          <p>Sports Team:</p>
           <input
             type="text"
-            onChange={this.handleNewsInput}
-            onKeyUp={this.handleSubmitNews}
-            value={this.state.newsInput}
+            onChange={this.handleSportsTeamChange}
+            value={this.state.sportsTeam}
           />
-
-          <p>Login with Google to authorise calendar access</p>
-          <Login />
-
-          <p>Google calendar id</p>
-          <input
-            type="text"
-            onChange={this.handleCalendar}
-            value={this.state.calendar}
-          />
-
+          <br />
+          <br />
           <button onClick={this.handleButtonSubmit}>Submit</button>
           <button onClick={this.handleButtonPress}>press</button>
 
@@ -145,18 +130,8 @@ export default class CreatePersonal extends Component {
   handleWorkPostcodeChange = event => {
     this.setState({ workPostcode: event.target.value });
   };
-  handleNewsInput = event => {
-    this.setState({ newsInput: event.target.value });
-  };
-  handleSubmitNews = event => {
-    if (event.keyCode === 13) {
-      console.log("hitENter<<<<<<<<<<<<<<<<<<<<,,,");
-      this.setState({ newsPref: [...this.state.newsPref, event.target.value] });
-      this.setState({ newsInput: "" });
-    }
-  };
-  handleCalendar = event => {
-    this.setState({ calendar: event.target.value });
+  handleSportsTeamChange = event => {
+    this.setState({ sportsTeam: event.target.value });
   };
   handleButtonSubmit = event => {
     console.log("hit function");
@@ -176,9 +151,8 @@ export default class CreatePersonal extends Component {
       workStreet: "",
       workCity: "",
       workPostcode: "",
-      calendar: "",
-      newsInput: "",
-      newsPref: []
+      sportsTeam: "",
+      tracks: []
     });
   };
 

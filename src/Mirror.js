@@ -11,16 +11,13 @@ import {
   Sporticon,
   Newsinfo,
   Newsicon,
-  Twitterinfo,
+  Onthisdayinfo,
   Twittericon
 } from "./components";
 import "./App.css";
 import "./App.css";
 class App extends Component {
-  state = {
-    sportsteam: "",
-    weathercity: ""
-  };
+  state = {};
   render() {
     return (
       <div className="App">
@@ -53,10 +50,10 @@ class App extends Component {
             this.state.username && (
               <div className="Sport">
                 <div className="Table">
-                  <Sporttable setTeam={this.state.sportsteam} />
+                  <Sporttable setTeam={this.props.name} />
                 </div>
                 <div className="Fixture">
-                  <Sportfixture setTeam={this.state.sportsteam} />
+                  <Sportfixture setTeam={this.props.name} />
                 </div>
                 <div className="area-overlap Sporticon">
                   <Sporticon />
@@ -76,7 +73,7 @@ class App extends Component {
               <Twittericon />
             </div>
             <div className="Twitinfo">
-              <Twitterinfo />
+              <Onthisdayinfo />
             </div>
           </div>
         </div>
