@@ -51,7 +51,7 @@ export default class Start extends Component {
               videoConstraints={videoConstraints}
             />
           </div>
-          {/* <button onClick={this.handlePhotoRecur}>Capture photo</button> */}
+       
         </div>
       );
     }
@@ -62,10 +62,11 @@ export default class Start extends Component {
     console.log(this.imageData, 'imagesdata');
 
     console.log('hit');
-    await axios
-      .post(`http://192.168.230.109:3000/write`, {
-        imageData: this.state.imageData
-      })
+    setTimeout(() => {
+      await axios
+        .post(`http://192.168.230.109:3000/write`, {
+          imageData: this.state.imageData
+        })})
       .then(res => {
         console.log(res);
         console.log(res.data.prediction.distance);

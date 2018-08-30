@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { apikey } from "./config/weatherApiKey";
+import { apikey } from "./config/weathericonApiKey";
 import axios from "axios";
 import propTypes from "prop-types";
 

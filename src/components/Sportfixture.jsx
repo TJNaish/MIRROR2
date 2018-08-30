@@ -24,23 +24,23 @@ class Fixtures extends Component {
     return <div />;
   }
 
-  // componentDidMount = async () => {
-  //   Promise.all([
-  //     JSON.parse(localStorage.getItem(this.props.name.sportsTeam))
-  //   ]).then(sportsTeam => {
-  //     if (sportsTeam !== null) {
-  //       this.setState({ sportsTeam });
-  //     }
-  //   });
-  //   let d = new Date();
-  //   let date = `${d.getFullYear()}-${d.getMonth() + 1}-${d.getDate()}`;
-  //   let date2 = `${d.getFullYear()}-${d.getMonth() + 2}-28`;
-  //   fetch(
-  //     `https://apifootball.com/api/?action=get_events&from=${date}&to=${date2}&league_id=63&APIkey=${apikey}`
-  //   )
-  //     .then(response => response.json())
-  //     .then(data => this.setState({ data: data }));
-  // };
+  componentDidMount = async () => {
+    Promise.all([JSON.parse(localStorage.getItem(this.props.name))]).then(
+      user => {
+        if (user !== null) {
+          this.setState({ sportsTeam: user[0].sportsTeam });
+        }
+      }
+    );
+    let d = new Date();
+    let date = `${d.getFullYear()}-${d.getMonth() + 1}-${d.getDate()}`;
+    let date2 = `${d.getFullYear()}-${d.getMonth() + 2}-28`;
+    fetch(
+      `https://apifootball.com/api/?action=get_events&from=${date}&to=${date2}&league_id=63&APIkey=${apikey}`
+    )
+      .then(response => response.json())
+      .then(data => this.setState({ data: data }));
+  };
 }
 
 export default Fixtures;

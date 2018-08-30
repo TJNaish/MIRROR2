@@ -189,10 +189,6 @@
   padding-right: 10px;
 }
 
-.hidden {
-  opacity: 0;
-}
-
 .startClock {
   display: flex;
   border-style: solid;
@@ -202,4 +198,8 @@
   justify-content: center;
   align-items: center;
   font-size: 100px;
+}
+
+.hidden {
+  opacity: 0;
 }

@@ -45,21 +45,17 @@ class App extends Component {
               <Routeinfo name={this.props.name} />
             </div>
           </div>
-
-          {this.state.sportsteam &&
-            this.state.username && (
-              <div className="Sport">
-                <div className="Table">
-                  <Sporttable setTeam={this.props.name} />
-                </div>
-                <div className="Fixture">
-                  <Sportfixture setTeam={this.props.name} />
-                </div>
-                <div className="area-overlap Sporticon">
-                  <Sporticon />
-                </div>
-              </div>
-            )}
+          <div className="Sport">
+            <div className="Table">
+              <Sporttable name={this.props.name} />
+            </div>
+            <div className="Fixture">
+              <Sportfixture name={this.props.name} />
+            </div>
+            <div className="area-overlap Sporticon">
+              <Sporticon />
+            </div>
+          </div>
           <div className="News">
             <div className="area-overlap Newsicon">
               <Newsicon />

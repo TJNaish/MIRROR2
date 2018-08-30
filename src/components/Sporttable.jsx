@@ -3,16 +3,17 @@ import { apikey } from "./config/fixturesApiKey";
 
 class Fixtures extends Component {
   state = {
-    data: []
+    data: [],
+    sportsTeam: ""
   };
   render() {
     return (
       <div>
         {this.state.data.map(team => {
-          if (team.team_name === this.props.setTeam)
+          if (team.team_name === this.state.sportsTeam)
             return (
               <div key={team.team_name}>
-                <b>{this.props.setTeam}</b>
+                <b>{this.state.sportsTeam}</b>
                 <table>
                   <tbody>
                     <tr>
@@ -41,6 +42,13 @@ class Fixtures extends Component {
   }
 
   componentDidMount = async () => {
+    Promise.all([JSON.parse(localStorage.getItem(this.props.name))]).then(
+      user => {
+        if (user !== null) {
+          this.setState({ sportsTeam: user[0].sportsTeam });
+        }
+      }
+    );
     fetch(
       `https://apifootball.com/api/?action=get_standings&league_id=63&APIkey=${apikey}`
     )
