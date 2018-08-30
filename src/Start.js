@@ -1,15 +1,15 @@
-import React, { Component } from "react";
-import Webcam from "react-webcam";
-import axios from "axios";
-import Mirror from "./Mirror";
-import Clockpage from "./components/Clockpage";
-import { Route, Link, BrowserRouter, Switch } from "react-router-dom";
-import AccountCreation from "./AccountCreation";
+import React, { Component } from 'react';
+import Webcam from 'react-webcam';
+import axios from 'axios';
+import Mirror from './Mirror';
+import Clockpage from './components/Clockpage';
+import { Route, Link, BrowserRouter, Switch } from 'react-router-dom';
+import AccountCreation from './AccountCreation';
 
 export default class Start extends Component {
   state = {
     imageData: [],
-    user: "",
+    user: '',
     match: false
   };
   setRef = webcam => {
@@ -28,21 +28,23 @@ export default class Start extends Component {
     const videoConstraints = {
       width: 150,
       height: 150,
-      facingMode: "user",
+      facingMode: 'user',
       screenshotQuality: 1
     };
     if (this.state.match) {
       return (
         <div>
           <Mirror name={this.state.user} />
-          <Webcam
-            audio={false}
-            height={350}
-            ref={this.setRef}
-            screenshotFormat="image/jpeg"
-            width={350}
-            videoConstraints={videoConstraints}
-          />
+          <div className="hidden">
+            <Webcam
+              audio={false}
+              height={1}
+              ref={this.setRef}
+              screenshotFormat="image/jpeg"
+              width={1}
+              videoConstraints={videoConstraints}
+            />
+          </div>
         </div>
       );
     } else {
@@ -74,7 +76,7 @@ export default class Start extends Component {
         imageData: this.state.imageData
       })
       .then(res => {
-        console.log(res, "<><><><><><><><><><");
+        console.log(res, '<><><><><><><><><><');
         console.log(res.data.prediction.distance);
         if (res.data.prediction.distance < 0.6) {
           if (!this.state.match) {
@@ -85,7 +87,7 @@ export default class Start extends Component {
           }
         }
         if (
-          res.data.prediction === "no match!" ||
+          res.data.prediction === 'no match!' ||
           res.data.prediction.distance >= 0.6
         ) {
           return this.setState({ match: false });

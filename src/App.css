@@ -11,8 +11,8 @@
   grid-template-columns: 0.3fr 0.5fr 1.5fr 1.7fr 1fr 1.8fr 1fr 0.2fr;
   grid-template-rows: 0.2fr 0.4fr 0.2fr 0.5fr 2fr 2fr 0.5fr 0.6fr 0.7fr 0.1fr;
   grid-gap: 1px 1px;
-  grid-template-areas: ". . . . . . . ." ". Clock Clock . . . . ." ". Name Name . . . . ." ". . . . . . . ." ". . . . . . . ." ". . . . . . . ." ". . . . . . . ." ". . . . . . . ." ". . . . . . . ." ". . . . . . . ." ". . . . . . . .";
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  grid-template-areas: '. . . . . . . .' '. Clock Clock . . . . .' '. Name Name . . . . .' '. . . . . . . .' '. . . . . . . .' '. . . . . . . .' '. . . . . . . .' '. . . . . . . .' '. . . . . . . .' '. . . . . . . .' '. . . . . . . .';
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 
 .Clock {
@@ -41,7 +41,7 @@
   grid-template-columns: 1.3fr 0.7fr;
   grid-template-rows: 1fr;
   grid-gap: 1px 1px;
-  grid-template-areas: "WeatherInfo WeatherIcon";
+  grid-template-areas: 'WeatherInfo WeatherIcon';
   font-size: 20px;
 }
 
@@ -63,7 +63,7 @@
   grid-template-columns: 1.3fr 0.7fr;
   grid-template-rows: 1fr;
   grid-gap: 1px 1px;
-  grid-template-areas: "RouteInfo RouteIcon";
+  grid-template-areas: 'RouteInfo RouteIcon';
   text-align: right;
   font-size: 25px;
 }
@@ -79,18 +79,13 @@
   align-self: center;
 }
 
-.Todo {
-  grid-area: 4 / 2 / 6 / 4;
-  font-size: 20px;
-}
-
 .Calendar {
   display: grid;
   grid-area: 7 / 2 / 8 / 5;
   grid-template-columns: 0.5fr 1.5fr;
   grid-template-rows: 1fr;
   grid-gap: 1px 1px;
-  grid-template-areas: "CalIcon CalInfo";
+  grid-template-areas: 'CalIcon CalInfo';
 }
 
 .Caldate {
@@ -113,7 +108,7 @@
   grid-template-columns: 0.4fr 1.6fr;
   grid-template-rows: 1.5fr 0.5fr;
   grid-gap: 1px 1px;
-  grid-template-areas: "Sporticon Table" "Sporticon Fixture";
+  grid-template-areas: 'Sporticon Table' 'Sporticon Fixture';
   font-size: 20px;
 }
 
@@ -142,7 +137,7 @@
   grid-template-columns: 0.3fr 2.1fr;
   grid-template-rows: 1fr;
   grid-gap: 1px 1px;
-  grid-template-areas: "Newsicon newsinfo";
+  grid-template-areas: 'Newsicon newsinfo';
   font-size: 20px;
   align-self: center;
 }
@@ -158,13 +153,12 @@
 
 .Twitter {
   display: grid;
-  grid-area: 8 / 6 / 9 / 8;
-  grid-template-columns: 1fr 1.5fr;
+  grid-area: 7 / 2 / 8 / 7;
+  grid-template-columns: 0.25fr 1.5fr;
   grid-template-rows: 1fr;
   grid-gap: 1px 1px;
-  grid-template-areas: "TwitIcon Twitinfo";
+  grid-template-areas: 'TwitIcon Twitinfo';
   font-size: 20px;
-  justify-self: center;
   align-self: center;
 }
 
@@ -175,6 +169,7 @@
 
 .Twitinfo {
   grid-area: Twitinfo;
+  align-self: center;
 }
 
 .TopIconImage {
