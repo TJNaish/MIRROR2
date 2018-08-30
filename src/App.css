@@ -79,11 +79,6 @@
   align-self: center;
 }
 
-.Todo {
-  grid-area: 4 / 2 / 6 / 4;
-  font-size: 20px;
-}
-
 .Calendar {
   display: grid;
   grid-area: 7 / 2 / 8 / 5;
@@ -158,13 +153,12 @@
 
 .Twitter {
   display: grid;
-  grid-area: 8 / 6 / 9 / 8;
-  grid-template-columns: 1fr 1.5fr;
+  grid-area: 7 / 2 / 8 / 7;
+  grid-template-columns: 0.25fr 1.5fr;
   grid-template-rows: 1fr;
   grid-gap: 1px 1px;
   grid-template-areas: "TwitIcon Twitinfo";
   font-size: 20px;
-  justify-self: center;
   align-self: center;
 }
 
@@ -175,12 +169,14 @@
 
 .Twitinfo {
   grid-area: Twitinfo;
+  align-self: center;
 }
 
 .TopIconImage {
   width: 150px;
   height: auto;
   padding-left: 20px;
+  padding-right: 20px;
 }
 
 .BottomIconImage {

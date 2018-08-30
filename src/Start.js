@@ -35,14 +35,16 @@ export default class Start extends Component {
       return (
         <div>
           <Mirror name={this.state.user} />
-          <Webcam
-            audio={false}
-            height={350}
-            ref={this.setRef}
-            screenshotFormat="image/jpeg"
-            width={350}
-            videoConstraints={videoConstraints}
-          />
+          <div className="hidden">
+            <Webcam
+              audio={false}
+              height={1}
+              ref={this.setRef}
+              screenshotFormat="image/jpeg"
+              width={1}
+              videoConstraints={videoConstraints}
+            />
+          </div>
         </div>
       );
     } else {

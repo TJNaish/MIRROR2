@@ -3,8 +3,8 @@ import React from "react";
 const Twittericon = () => {
   return (
     <img
-      src="/images/twitter.png"
-      alt="Twitter Icon"
+      src="/images/calendar.png"
+      alt="Calendar Icon"
       className="BottomIconImage"
     />
   );
